@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
             //                                        TODO this should be latest db id + 1
             Activity new_activity = new Activity(0, Activity.TYPE.valueOf(activityType), name);
 
-            startTracker(new_activity.getACTIVITY_ID());
+            startTracker(new_activity.getActivity_id());
 
         }
     }

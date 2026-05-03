@@ -1,15 +1,20 @@
 package com.example.slednet.data.models;
 
+import androidx.room.*;
+
+@Entity(tableName = "activities")
 public class Activity {
 
     // Initializers ; stuff to be initialized immediately
 
-    private final int ACTIVITY_ID;
-    private final long START_TIMESTAMP;
+    @PrimaryKey(autoGenerate = true) // removes id handling from us *whew*
+    private int activity_id;
+
+    private long start_timestamp;
 
     // initialized on activity END; wont allow it to be final
 
-    private long END_TIMESTAMP;
+    private long end_timestamp;
 
     // shortly after during processes
     private long duration; // in s
@@ -33,16 +38,18 @@ public class Activity {
     // -- [CONSTRUCTOR + END ACTIVITY] ---------------------------
     // -----------------------------------------------------------
 
+    public Activity() {}
 
+    @Ignore // Room wants an empty constructor
     public Activity(int ACTIVITY_ID, TYPE type, String title) {
-        this.ACTIVITY_ID = ACTIVITY_ID;
+        this.activity_id = ACTIVITY_ID;
         this.type = type;
         this.title = title;
-        this.START_TIMESTAMP = System.currentTimeMillis();
+        this.start_timestamp = System.currentTimeMillis();
     }
 
     public void endActivity() {
-        this.END_TIMESTAMP = System.currentTimeMillis();
+        this.end_timestamp = System.currentTimeMillis();
 
         // calculate duration / time in s and whatever db interactions here
     }
@@ -61,16 +68,16 @@ public class Activity {
     // -----------------------------------------------------------
 
 
-    public int getACTIVITY_ID() {
-        return ACTIVITY_ID;
+    public int getActivity_id() {
+        return activity_id;
     }
 
-    public long getSTART_TIMESTAMP() {
-        return START_TIMESTAMP;
+    public long getStart_timestamp() {
+        return start_timestamp;
     }
 
-    public long getEND_TIMESTAMP() {
-        return END_TIMESTAMP;
+    public long getEnd_timestamp() {
+        return end_timestamp;
     }
 
     public long getDuration() {
