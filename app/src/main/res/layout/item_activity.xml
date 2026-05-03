@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    android:paddingBottom="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#F5F5F5"
+        android:paddingLeft="2dp"
+        android:paddingTop="2dp"
+        android:paddingRight="2dp"
+        android:paddingBottom="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#222222"
+            android:padding="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#F5F5F5"
+                android:padding="14dp">
+
+                <!-- TITLE -->
+                <TextView
+                    android:id="@+id/card_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/vcr"
+                    android:text="&lt;RUN/&gt; Morning Grind"
+                    android:textColor="#222222"
+                    android:textSize="13sp"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="10dp"/>
+
+                <!-- STATS ROW -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- DISTANCE -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/card_distance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/vcr"
+                            android:text="5.2"
+                            android:textColor="#222222"
+                            android:textSize="17sp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/vcr"
+                            android:text="KM"
+                            android:textColor="#888888"
+                            android:textSize="10sp"
+                            android:letterSpacing="0.1"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+
+                    <!-- DIVIDER -->
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="#222222"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp"/>
+
+                    <!-- TIME -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/card_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/vcr"
+                            android:text="28:14"
+                            android:textColor="#222222"
+                            android:textSize="17sp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/vcr"
+                            android:text="TIME"
+                            android:textColor="#888888"
+                            android:textSize="10sp"
+                            android:letterSpacing="0.1"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+
+                    <!-- DIVIDER -->
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="#222222"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp"/>
+
+                    <!-- PACE -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/card_pace"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/vcr"
+                            android:text="5:25"
+                            android:textColor="#222222"
+                            android:textSize="17sp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/vcr"
+                            android:text="MIN/KM"
+                            android:textColor="#888888"
+                            android:textSize="10sp"
+                            android:letterSpacing="0.1"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

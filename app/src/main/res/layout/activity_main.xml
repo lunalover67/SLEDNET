@@ -157,19 +157,29 @@
             android:textSize="12sp"
             android:fontFamily="@font/vcr"
             android:letterSpacing="0.15"
-            android:layout_marginBottom="12dp"/>
+            android:layout_marginBottom="0dp"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingHorizontal="20dp"
+        android:paddingBottom="20dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TEST"
-            android:id="@+id/test"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:clipToPadding="false">
+
+            <LinearLayout
+                android:id="@+id/past_activities_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+        </ScrollView>
 
     </LinearLayout>
 
