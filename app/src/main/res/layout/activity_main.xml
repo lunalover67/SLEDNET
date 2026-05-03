@@ -1,19 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity">
+    android:background="#F5F5F5"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- TOP BAR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#222222"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/vcr"
+            android:text="SLEDNET"
+            android:textColor="#F5F5F5"
+            android:textSize="16sp"
+            android:letterSpacing="0.15" />
+
+    </LinearLayout>
+
+    <!-- MAIN CONTENT -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="This is the main activity"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:padding="20dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- ACTIVITY TYPE TOGGLE — bordered buttons flush together -->
+        <RadioGroup
+            android:id="@+id/activityTypeGroup"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:background="#222222"
+            android:padding="3dp">
+
+            <RadioButton
+                android:id="@+id/radioRun"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="RUN"
+                android:fontFamily="@font/vcr"
+                android:textSize="14sp"
+                android:letterSpacing="0.15"
+                android:gravity="center"
+                android:button="@null"
+                android:checked="true"
+                android:background="@drawable/radio_selector"
+                android:textColor="@drawable/radio_text_selector"/>
+
+            <!-- inner divider -->
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:background="#222222"/>
+
+            <RadioButton
+                android:id="@+id/radioWalk"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="WALK"
+                android:fontFamily="@font/vcr"
+                android:textSize="14sp"
+                android:letterSpacing="0.15"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/radio_selector"
+                android:textColor="@drawable/radio_text_selector"/>
+
+        </RadioGroup>
+
+        <!-- NAME INPUT + GO ROW -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <!-- Name input bordered like FLIP button -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:background="#222222"
+                android:padding="3dp">
+
+                <EditText
+                    android:id="@+id/activityNameInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#F5F5F5"
+                    android:fontFamily="@font/vcr"
+                    android:hint="ACTIVITY NAME"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:textColor="#222222"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <!-- GO button — dark fill like RESET button -->
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="4dp"
+                android:background="#222222"
+                android:padding="3dp">
+
+                <Button
+                    android:id="@+id/goButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="GO"
+                    android:textColor="#F5F5F5"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/vcr"
+                    android:letterSpacing="0.15"
+                    android:backgroundTint="#222222"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    app:cornerRadius="0dp"
+                    android:stateListAnimator="@null"
+                    android:onClick="createActivity" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- DIVIDER -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#222222"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- PREVIOUS ACTIVITIES LABEL -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PREVIOUS ACTIVITIES"
+            android:textColor="#222222"
+            android:textSize="12sp"
+            android:fontFamily="@font/vcr"
+            android:letterSpacing="0.15"
+            android:layout_marginBottom="12dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TEST"
+            android:id="@+id/test"/>
+
+    </LinearLayout>
+
+    <!-- ACTIVITY LIST -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/activityList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:clipToPadding="false"/>
+
+</LinearLayout>

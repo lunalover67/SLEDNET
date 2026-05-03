@@ -14,9 +14,6 @@ public class GpsPoint {
     // -----------------------------------------------------------
 
 
-    // ID to relate the activity (in db).
-    private final int ACTIVITY_ID;
-
     // Geographical coordinates.
     private final double longitude, latitude, altitude;
 
@@ -33,13 +30,12 @@ public class GpsPoint {
 
 
     // The one and only constructor.
-    public GpsPoint(double longitude, double latitude, double altitude, long timestamp, int accuracy, int ACTIVITY_ID) {
+    public GpsPoint(double longitude, double latitude, double altitude, long timestamp, int accuracy) {
         this.longitude = longitude;
         this.latitude = latitude;
         this.altitude = altitude;
         this.timestamp = timestamp;
         this.accuracy = accuracy;
-        this.ACTIVITY_ID = ACTIVITY_ID;
     }
 
 
@@ -66,10 +62,6 @@ public class GpsPoint {
 
     public int getAccuracy() {
         return accuracy;
-    }
-
-    public int getACTIVITY_ID() {
-        return ACTIVITY_ID;
     }
 
 }

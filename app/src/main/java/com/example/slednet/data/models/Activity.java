@@ -33,6 +33,7 @@ public class Activity {
     // -- [CONSTRUCTOR + END ACTIVITY] ---------------------------
     // -----------------------------------------------------------
 
+
     public Activity(int ACTIVITY_ID, TYPE type, String title) {
         this.ACTIVITY_ID = ACTIVITY_ID;
         this.type = type;
