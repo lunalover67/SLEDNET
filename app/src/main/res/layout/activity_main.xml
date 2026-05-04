@@ -50,7 +50,7 @@
                 android:layout_weight="1"
                 android:text="RUN"
                 android:fontFamily="@font/vcr"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:letterSpacing="0.15"
                 android:gravity="center"
                 android:button="@null"
@@ -71,7 +71,7 @@
                 android:layout_weight="1"
                 android:text="WALK"
                 android:fontFamily="@font/vcr"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:letterSpacing="0.15"
                 android:gravity="center"
                 android:button="@null"
@@ -109,7 +109,7 @@
                     android:paddingStart="14dp"
                     android:paddingEnd="14dp"
                     android:textColor="#222222"
-                    android:textSize="13sp" />
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -154,7 +154,7 @@
             android:layout_height="wrap_content"
             android:text="PREVIOUS ACTIVITIES"
             android:textColor="#222222"
-            android:textSize="12sp"
+            android:textSize="16sp"
             android:fontFamily="@font/vcr"
             android:letterSpacing="0.15"
             android:layout_marginBottom="0dp"/>
