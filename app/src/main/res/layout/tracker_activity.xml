@@ -1,14 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.TrackerActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#F5F5F5"
+    android:orientation="vertical">
 
-    <TextView
+    <!-- TOP BAR -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="hi there"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="50dp"
+        android:background="#222222"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/vcr"
+            android:text="SLEDNET"
+            android:textColor="#F5F5F5"
+            android:textSize="16sp"
+            android:letterSpacing="0.15" />
+
+    </LinearLayout>
+
+    <!-- BACK BUTTON -->
+    <LinearLayout
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="#222222"
+        android:padding="2dp"
+        android:layout_margin="12dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:text="&lt;"
+            android:textColor="#222222"
+            android:textSize="16sp"
+            android:fontFamily="@font/vcr"
+            android:background="#F5F5F5"
+            android:stateListAnimator="@null"
+            android:onClick="returnToMain"/>
+
+    </LinearLayout>
+
+    <!-- MAIN CONTENT -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp">
+
+
+        <TextView
+            android:id="@+id/demo_output"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/vcr"
+            android:text="GPS_COORDS"
+            android:textColor="#222222"
+            android:textSize="48sp"
+            android:layout_marginBottom="8dp"/>
+<!--        -->
+<!--        &lt;!&ndash; ELAPSED TIME &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/tracker_time"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/vcr"-->
+<!--            android:text="00:00"-->
+<!--            android:textColor="#222222"-->
+<!--            android:textSize="48sp"-->
+<!--            android:layout_marginBottom="8dp"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/vcr"-->
+<!--            android:text="TIME"-->
+<!--            android:textColor="#888888"-->
+<!--            android:textSize="10sp"-->
+<!--            android:letterSpacing="0.15"-->
+<!--            android:layout_marginBottom="32dp"/>-->
+
+<!--        &lt;!&ndash; DISTANCE &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/tracker_distance"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/vcr"-->
+<!--            android:text="0.00"-->
+<!--            android:textColor="#222222"-->
+<!--            android:textSize="32sp"-->
+<!--            android:layout_marginBottom="8dp"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/vcr"-->
+<!--            android:text="KM"-->
+<!--            android:textColor="#888888"-->
+<!--            android:textSize="10sp"-->
+<!--            android:letterSpacing="0.15"/>-->
+
+    </LinearLayout>
+
+    <!-- BOTTOM PANEL -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#222222"
+        android:padding="3dp"
+        android:layout_margin="20dp">
+
+        <!-- GPS STATUS -->
+        <TextView
+            android:id="@+id/gps_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/vcr"
+            android:text="[GPS ACQUIRING...]"
+            android:textColor="#888888"
+            android:textSize="11sp"
+            android:letterSpacing="0.15"
+            android:gravity="center"
+            android:background="#F5F5F5"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/gps_subtext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/vcr"
+            android:background="#F5F5F5"
+            android:text="Connecting..."
+            android:textColor="#888888"
+            android:textSize="10sp"
+            android:letterSpacing="0.15"
+            android:gravity="center"
+            android:paddingBottom="10dp"/>
+
+        <!-- DIVIDER -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#222222"/>
+
+        <!-- STOP BUTTON -->
+        <Button
+            android:id="@+id/stop_button"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:text="STOP"
+            android:textColor="#F5F5F5"
+            android:textSize="16sp"
+            android:fontFamily="@font/vcr"
+            android:letterSpacing="0.15"
+            android:backgroundTint="#222222"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:stateListAnimator="@null"
+            app:cornerRadius="0dp"
+            android:onClick="stopActivity"/>
+
+    </LinearLayout>
+
+</LinearLayout>

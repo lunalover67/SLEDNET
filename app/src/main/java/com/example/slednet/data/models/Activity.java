@@ -64,14 +64,12 @@ public class Activity {
     // calculate distance, pace blah blah blah
 
     @Ignore
-    public static Activity generateFake() {
-        String[] names = {"Morning Grind", "Evening Stroll", "Lunch Loop", "Weekend Long", "Recovery Jog"};
-        TYPE[] types = {TYPE.RUN, TYPE.WALK};
+    public static Activity generateFake(String name, TYPE type) {
         Random random = new Random();
 
         Activity a = new Activity();
-        a.type = types[random.nextInt(types.length)];
-        a.title = names[random.nextInt(names.length)];
+        a.type = type;
+        a.title = name;
         a.start_timestamp = System.currentTimeMillis() - random.nextInt(864000000); // random within last 10 days
         a.duration = 600 + random.nextInt(3000); // 10 to 60 mins in seconds
         a.distance = 1000 + random.nextInt(15000); // 1 to 16 km in meters
